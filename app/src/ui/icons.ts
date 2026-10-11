@@ -1,0 +1,56 @@
+// Icon shapes on a 24×24 grid, drawn as strokes (2px, round caps). Each entry is a list of
+// SVG path strings; circles are written as paths too so every platform renders them the same.
+
+const circle = (cx: number, cy: number, r: number) =>
+  `M${cx - r} ${cy}a${r} ${r} 0 1 0 ${r * 2} 0a${r} ${r} 0 1 0 ${-r * 2} 0`;
+
+export const ICONS = {
+  today: [circle(12, 12, 4), 'M12 2v2', 'M12 20v2', 'M4.9 4.9l1.4 1.4', 'M17.7 17.7l1.4 1.4', 'M2 12h2', 'M20 12h2', 'M4.9 19.1l1.4-1.4', 'M17.7 6.3l1.4-1.4'],
+  shelf: ['M4 4h4v16H4z', 'M10 4h4v16h-4z', 'M16.5 5.2l3.8-1 3.2 15.3-3.8 1z'],
+  calendar: ['M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z', 'M4 10h16', 'M8 2v4', 'M16 2v4'],
+  import: ['M12 3v12', 'M7 10l5 5 5-5', 'M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2'],
+  help: [circle(12, 12, 9), 'M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6', 'M12 17h.01'],
+  settings: ['M4 6h10', 'M18 6h2', 'M4 12h4', 'M12 12h8', 'M4 18h12', 'M20 18h0', circle(16, 6, 2), circle(10, 12, 2), circle(18, 18, 2)],
+  lock: ['M5 11h14v10H5z', 'M8 11V7a4 4 0 0 1 8 0v4'],
+  unlock: ['M5 11h14v10H5z', 'M8 11V7a4 4 0 0 1 7.5-2'],
+  plus: ['M12 5v14', 'M5 12h14'],
+  search: [circle(11, 11, 7), 'M20 20l-4-4'],
+  close: ['M6 6l12 12', 'M18 6L6 18'],
+  check: ['M5 12l5 5L20 7'],
+  chevronLeft: ['M15 6l-6 6 6 6'],
+  chevronRight: ['M9 6l6 6-6 6'],
+  chevronDown: ['M6 9l6 6 6-6'],
+  folder: ['M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'],
+  page: ['M6 3h8l4 4v14H6z', 'M14 3v4h4', 'M9 12h6', 'M9 16h6'],
+  sticky: ['M5 4h14v10l-6 6H5z', 'M13 20v-6h6'],
+  archive: ['M3 4h18v4H3z', 'M5 8v11h14V8', 'M10 12h4'],
+  restore: ['M3 12a9 9 0 1 0 3-6.7', 'M3 4v5h5'],
+  trash: ['M4 7h16', 'M9 7V4h6v3', 'M6 7l1 13h10l1-13'],
+  edit: ['M4 20h4L19 9l-4-4L4 16z', 'M14 6l4 4'],
+  clock: [circle(12, 12, 9), 'M12 7v5l3 2'],
+  paperclip: ['M20 11l-8.5 8.5a5 5 0 0 1-7-7L13 4a3.5 3.5 0 0 1 5 5l-8.5 8.5a2 2 0 0 1-3-3L14 7'],
+  upload: ['M12 16V4', 'M7 9l5-5 5 5', 'M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2'],
+  download: ['M12 4v12', 'M7 11l5 5 5-5', 'M4 20h16'],
+  repeat: ['M17 2l3 3-3 3', 'M4 11V9a4 4 0 0 1 4-4h12', 'M7 22l-3-3 3-3', 'M20 13v2a4 4 0 0 1-4 4H4'],
+  alert: ['M12 3l10 18H2z', 'M12 10v4', 'M12 17.5h.01'],
+  shield: ['M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z', 'M9 12l2 2 4-4'],
+  eye: ['M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z', circle(12, 12, 3)],
+  eyeOff: ['M3 3l18 18', 'M10.6 5.1A10.4 10.4 0 0 1 12 5c6.5 0 10 7 10 7a17 17 0 0 1-3.2 4.2', 'M6.6 6.6C3.7 8.5 2 12 2 12s3.5 7 10 7c1.7 0 3.2-.4 4.5-1'],
+  more: ['M5 12h.01', 'M12 12h.01', 'M19 12h.01'],
+  camera: ['M3 8a2 2 0 0 1 2-2h2l2-2h6l2 2h2a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z', circle(12, 13, 4)],
+  image: ['M4 4h16v16H4z', circle(9, 9, 2), 'M20 15l-5-5L4 20'],
+  file: ['M6 3h8l4 4v14H6z', 'M14 3v4h4'],
+  device: ['M3 5h18v11H3z', 'M8 20h8', 'M12 16v4'],
+  backup: ['M4 7c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3z', 'M4 7v10c0 1.7 3.6 3 8 3', 'M20 7v4', 'M16 17l2 2 4-4'],
+  peel: ['M5 4h14v10l-6 6H5z', 'M9 10l2 2 4-4'],
+  tag: ['M3 3h8l10 10-8 8L3 11z', 'M7.5 7.5h.01'],
+  arrowRight: ['M5 12h14', 'M13 6l6 6-6 6'],
+  history: [circle(12, 12, 9), 'M12 7v5h4'],
+  moon: ['M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z'],
+  sun: [circle(12, 12, 4), 'M12 2v2', 'M12 20v2', 'M2 12h2', 'M20 12h2'],
+  loop: [circle(9, 12, 5), circle(15, 12, 5)],
+  link: ['M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1', 'M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1'],
+  print: ['M7 8V3h10v5', 'M5 8h14a2 2 0 0 1 2 2v6h-4v4H7v-4H3v-6a2 2 0 0 1 2-2z'],
+} as const;
+
+export type IconName = keyof typeof ICONS;

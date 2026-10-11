@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=Sala (example)
+Name[pt]=Sala (exemplo)
+Name[es]=Sala (ejemplo)
+Comment=Try Sala with a fictional practice that resets every time it opens
+Comment[pt]=Experimente o Sala com uma prática fictícia que recomeça sempre que a abre
+Comment[es]=Pruebe Sala con una consulta ficticia que se reinicia cada vez que la abre
+Exec=sala-desktop --example
+Icon=sala-desktop
+StartupWMClass=sala-desktop
+Categories=Office;
+Terminal=false

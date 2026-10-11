@@ -1,0 +1,16 @@
+name: Idea or request
+description: Suggest something Sala could do better
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please describe the situation in your practice where this would help. Use invented examples — never real patient details.
+        Pode escrever em português · Puede escribir en español.
+  - type: textarea
+    attributes:
+      label: What are you trying to do?
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: What would help?

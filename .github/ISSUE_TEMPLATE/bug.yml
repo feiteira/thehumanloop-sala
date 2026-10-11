@@ -1,0 +1,30 @@
+name: Bug report
+description: Something in Sala does not work as it should
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Never include real patient data** — no names, notes, screenshots of folders or files from your practice, even with names changed. Describe the problem with invented examples instead.
+        Security problem? Do not open an issue: use **Security → Report a vulnerability**.
+        Pode escrever em português · Puede escribir en español.
+  - type: checkboxes
+    attributes:
+      label: Patient data
+      options:
+        - label: This report contains no real patient data.
+          required: true
+  - type: textarea
+    attributes:
+      label: What happened, and what did you expect?
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Steps to reproduce
+      placeholder: "1. Open a folder\n2. …"
+  - type: input
+    attributes:
+      label: Sala version and operating system
+      placeholder: "Sala 0.1.0 on Windows 11 / Ubuntu 24.04"
+    validations:
+      required: true

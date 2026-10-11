@@ -1,0 +1,97 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Sala",
+  "version": "0.3.0",
+  "identifier": "eu.thehumanloop.sala",
+  "build": {
+    "frontendDist": "../../app/dist",
+    "devUrl": "http://localhost:1420",
+    "beforeDevCommand": "npm run dev --workspace @sala/app",
+    "beforeBuildCommand": "npm run build --workspace @sala/app"
+  },
+  "app": {
+    "withGlobalTauri": false,
+    "windows": [
+      {
+        "title": "Sala",
+        "width": 1280,
+        "height": 820,
+        "minWidth": 960,
+        "minHeight": 640,
+        "center": true
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: asset:; font-src 'self'; connect-src 'self' ipc: http://ipc.localhost blob: data:; media-src 'self' blob:",
+      "freezePrototype": false,
+      "dangerousDisableAssetCspModification": [
+        "style-src"
+      ]
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": [
+      "appimage",
+      "deb",
+      "rpm",
+      "nsis",
+      "msi"
+    ],
+    "category": "Productivity",
+    "shortDescription": "Offline-first practice app for therapists",
+    "longDescription": "Sala keeps a therapist's practice \u2014 patient folders, session pages, sticky notes and calendar \u2014 encrypted on their own computer. It works with no account and no internet.",
+    "copyright": "\u00a9 The Human Loop contributors",
+    "license": "MPL-2.0",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "windows": {
+      "webviewInstallMode": {
+        "type": "downloadBootstrapper"
+      },
+      "nsis": {
+        "languages": [
+          "English",
+          "Portuguese",
+          "Spanish"
+        ],
+        "displayLanguageSelector": true,
+        "installerHooks": "windows/installer-hooks.nsh"
+      },
+      "wix": {
+        "language": [
+          "en-US",
+          "pt-PT",
+          "es-ES"
+        ],
+        "fragmentPaths": [
+          "windows/example-shortcut.wxs"
+        ],
+        "componentGroupRefs": [
+          "ExampleShortcuts"
+        ]
+      }
+    },
+    "linux": {
+      "deb": {
+        "depends": [],
+        "files": {
+          "/usr/share/applications/sala-example.desktop": "linux/sala-example.desktop"
+        }
+      },
+      "appimage": {
+        "bundleMediaFramework": false
+      },
+      "rpm": {
+        "files": {
+          "/usr/share/applications/sala-example.desktop": "linux/sala-example.desktop"
+        }
+      }
+    }
+  }
+}
